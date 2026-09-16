@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* :root {
+  --primary: #f94735;
+  --primary-hover: #d93627;
+} */
+
+:root {
+  --primary: #FF4930;
+  --primary-hover: #e0361f;
+}
+
+@theme {
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 7s ease-out forwards;
+}
