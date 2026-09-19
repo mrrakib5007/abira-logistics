@@ -16,9 +16,8 @@ import {
   FiMessageSquare,
   FiHelpCircle,
   FiFileText,
-  FiLayers
-} from "react-icons/fi";
-import { GiCommercialAirplane } from "react-icons/gi";
+  } from "react-icons/fi";
+import { GiCargoCrate, GiCommercialAirplane } from "react-icons/gi";
 import { RiShipLine } from "react-icons/ri";
 import { FaTrainSubway, FaWarehouse } from "react-icons/fa6";
 import ThemeToggle from "../Theme/ThemeToggle";
@@ -88,7 +87,7 @@ const navItems = [
         title: "Project & Heavy Cargo", 
         desc: "Specialized oversized freight transport", 
         href: "/services/project-cargo", 
-        icon: FiLayers 
+        icon: GiCargoCrate 
       },
       { 
         title: "Air-Sea & Sea-Air", 
