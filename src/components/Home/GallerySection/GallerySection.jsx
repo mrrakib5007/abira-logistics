@@ -127,10 +127,10 @@ export default function GallerySection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto max-w-2xl text-center mb-10"
         >
           <span className="text-xs sm:text-sm font-extrabold tracking-[0.25em] text-primary uppercase">
@@ -170,18 +170,17 @@ export default function GallerySection() {
               {displayedItems.map((item, idx) => (
                 <motion.div
                   layout
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{
-                    duration: 0.45,
-                    delay: (idx % 4) * 0.04,
-                    ease: [0.22, 1, 0.36, 1],
-                    layout: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+                    duration: 0.5,
+                    delay: (idx % 4) * 0.05,
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                   key={item.id}
                   onClick={() => setSelectedIndex(idx)}
-                  className="group relative aspect-3/2 w-full cursor-pointer overflow-hidden rounded-none border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 origin-center"
+                  className="group relative aspect-3/2 w-full cursor-pointer overflow-hidden rounded-none border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/40 hover:-translate-y-1"
                 >
                   <div className="relative h-full w-full overflow-hidden rounded-none">
                     <Image
@@ -191,7 +190,7 @@ export default function GallerySection() {
                       priority={idx < 4}
                       loading={idx < 4 ? "eager" : "lazy"}
                       sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -209,8 +208,8 @@ export default function GallerySection() {
           </motion.div>
         ) : (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             className="flex flex-col items-center justify-center py-20 px-4 border border-dashed border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20 text-center"
           >
@@ -228,14 +227,14 @@ export default function GallerySection() {
 
         {showViewAll && (
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="mt-14 text-center"
           >
             <Link
-              href="/gallery"
+              href="/company/gallery"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-primary/25 hover:bg-primary-hover hover:-translate-y-0.5 transition cursor-pointer group"
             >
               <span>View All</span>
@@ -257,28 +256,28 @@ export default function GallerySection() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-6 lg:p-8 backdrop-blur-md"
           >
             <motion.div
-              initial={{ scale: 0, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0, opacity: 0 }}
+              exit={{ scale: 0.95, opacity: 0 }}
               transition={{
-                duration: 0.45,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.3,
+                ease: [0.16, 1, 0.3, 1],
               }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-[min(90vw,1000px)] aspect-3/2 max-h-[85vh] overflow-hidden rounded-none shadow-2xl origin-center"
+              className="relative w-[min(90vw,1000px)] aspect-3/2 max-h-[85vh] overflow-hidden rounded-none shadow-2xl"
             >
               <div className="relative h-full w-full overflow-hidden rounded-none bg-transparent">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={displayedItems[selectedIndex].id}
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0, opacity: 0 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
                     transition={{
-                      duration: 0.4,
-                      ease: [0.22, 1, 0.36, 1],
+                      duration: 0.3,
+                      ease: [0.16, 1, 0.3, 1],
                     }}
-                    className="relative h-full w-full origin-center"
+                    className="relative h-full w-full"
                   >
                     <Image
                       src={displayedItems[selectedIndex].image}

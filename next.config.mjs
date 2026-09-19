@@ -2,6 +2,12 @@
 const nextConfig = {
   images: {
     qualities: [75, 85, 90],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
 };
 
