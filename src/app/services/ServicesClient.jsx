@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { GiCargoCrate, GiCommercialAirplane } from "react-icons/gi";
 import { RiShipLine } from "react-icons/ri";
-import { FiTruck, FiFileText, FiAnchor } from "react-icons/fi";
+import { FiTruck, FiFileText, FiAnchor, FiCheck } from "react-icons/fi";
 import { FaTrainSubway, FaWarehouse } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import PageHeader from "@/components/Shared/PageHeader";
@@ -15,14 +15,14 @@ const servicesData = {
     subtitle:
       "Express and consolidated air cargo with next-flight-out options worldwide.",
     description:
-      "ABIRA Logistics provides fast, reliable, and flexible air freight forwarding solutions for businesses that require time-sensitive international transportation.",
+      "ABIRA Logistics provides fast, reliable, and flexible air freight forwarding solutions designed specifically for businesses that require high-speed, time-sensitive international transportation.",
     features: [
       "Next-flight-out options",
       "Global airline partnerships",
       "Real-time cargo tracking",
       "Secure handling for high-value goods",
     ],
-    icon: GiCommercialAirplane,
+    icon: "air",
     href: "/services/air-freight",
   },
 
@@ -31,14 +31,14 @@ const servicesData = {
     subtitle:
       "FCL, LCL and reefer sailings backed by long-standing carrier contracts.",
     description:
-      "ABIRA Logistics delivers comprehensive ocean freight solutions for businesses moving cargo across international markets.",
+      "ABIRA Logistics delivers comprehensive, cost-effective, and robust ocean freight solutions tailored for businesses moving large volumes of cargo across international trade lanes and continents.",
     features: [
       "FCL & LCL consolidations",
       "Reefer container solutions",
       "Port-to-port and door-to-door",
       "Customs documentation support",
     ],
-    icon: RiShipLine,
+    icon: "ocean",
     href: "/services/ocean-freight",
   },
 
@@ -47,14 +47,14 @@ const servicesData = {
     subtitle:
       "FTL and LTL trucking with cross-border documentation handled end to end.",
     description:
-      "Our road freight services provide dependable domestic and cross-border transportation solutions for businesses of all sizes.",
+      "Our advanced road freight services provide highly dependable domestic and seamless cross-border transportation networks for growing businesses of all scales and industries.",
     features: [
       "FTL & LTL transport services",
       "Cross-border documentation",
       "GPS tracked vehicle fleets",
       "Secure transit protocols",
     ],
-    icon: FiTruck,
+    icon: "road",
     href: "/services/road-freight",
   },
 
@@ -63,14 +63,14 @@ const servicesData = {
     subtitle:
       "Cost-efficient intermodal rail corridors linking Asia and Europe.",
     description:
-      "ABIRA Logistics provides efficient rail freight solutions for companies seeking a reliable alternative to traditional air and ocean transportation.",
+      "ABIRA Logistics provides highly efficient and sustainable rail freight solutions for companies seeking a high-value, reliable alternative to traditional air and ocean transport models.",
     features: [
       "Intermodal rail corridors",
       "Eco-friendly transport",
       "Cost-effective bulk shipping",
       "Scheduled terminal departures",
     ],
-    icon: FaTrainSubway,
+    icon: "rail",
     href: "/services/rail-freight",
   },
 
@@ -79,14 +79,14 @@ const servicesData = {
     subtitle:
       "Licensed clearance, duty optimisation and full trade compliance support.",
     description:
-      "ABIRA Logistics helps businesses navigate complex customs procedures and international trade requirements with professional customs brokerage services.",
+      "ABIRA Logistics empowers businesses to effortlessly clear complex international regulatory barriers, statutory trade laws, and intricate border procedures through our licensed customs brokerage expertise.",
     features: [
       "Licensed customs brokerage",
       "Duty optimization strategies",
       "Digital manifest filings",
       "Trade compliance advisory",
     ],
-    icon: FiFileText,
+    icon: "customs",
     href: "/services/customs-brokerage",
   },
 
@@ -95,14 +95,14 @@ const servicesData = {
     subtitle:
       "Bonded, ambient and temperature-controlled storage with live inventory.",
     description:
-      "ABIRA Logistics offers secure and flexible warehousing solutions designed to support modern supply chains from storage to final distribution.",
+      "ABIRA Logistics delivers secure, highly adaptable, and technologically advanced warehousing and inventory management solutions engineered to back modern, fast-paced supply chains from initial storage to final customer distribution.",
     features: [
       "Bonded & ambient storage",
       "Temperature-controlled zones",
       "Live inventory visibility",
       "Advanced warehouse security",
     ],
-    icon: FaWarehouse,
+    icon: "warehouse",
     href: "/services/warehousing",
   },
 
@@ -111,14 +111,14 @@ const servicesData = {
     subtitle:
       "Route surveys, lifting plans and multi-axle transport for oversized loads.",
     description:
-      "ABIRA Logistics specializes in complex project logistics and the transportation of oversized, heavy, and high-value industrial cargo.",
+      "ABIRA Logistics stands as an industry leader in managing extraordinarily complex project logistics, out-of-gauge (OOG) dimensions, heavy industrial machinery, and high-stakes capital equipment.",
     features: [
       "Comprehensive route surveys",
       "Custom heavy lifting plans",
       "Multi-axle transport fleet",
       "On-site engineering supervision",
     ],
-    icon: GiCargoCrate,
+    icon: "project",
     href: "/services/project-cargo",
   },
 
@@ -127,16 +127,27 @@ const servicesData = {
     subtitle:
       "Hybrid routings that balance ocean economics with air-freight speed.",
     description:
-      "ABIRA Logistics provides flexible Air-Sea and Sea-Air multimodal freight solutions for businesses that need to balance transportation cost with delivery speed.",
+      "ABIRA Logistics offers highly versatile Air-Sea and Sea-Air multimodal transport frameworks built specifically for enterprises striving to optimize the strict balance between international shipping expenditure and delivery velocity.",
     features: [
       "Cost-to-speed optimization",
       "Seamless multimodal transfer",
       "Flexible corridor routing",
       "Priority transit management",
     ],
-    icon: FiAnchor,
+    icon: "hybrid",
     href: "/services/hybrid-freight",
   },
+};
+
+const iconMap = {
+  air: GiCommercialAirplane,
+  ocean: RiShipLine,
+  road: FiTruck,
+  rail: FaTrainSubway,
+  customs: FiFileText,
+  warehouse: FaWarehouse,
+  project: GiCargoCrate,
+  hybrid: FiAnchor,
 };
 
 export default function ServicesClient() {
@@ -154,7 +165,7 @@ export default function ServicesClient() {
           
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {Object.values(servicesData).map((item, idx) => {
-              const Icon = item.icon;
+              const IconComponent = iconMap[item.icon] || FiCheck;
               return (
                 <motion.div
                   key={item.title}
@@ -172,7 +183,7 @@ export default function ServicesClient() {
 
                     <div className="relative z-10">
                       <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white shadow-sm">
-                        <Icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+                        <IconComponent className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
                       </div>
 
                       <h3 className="mb-3 text-lg font-bold text-slate-900 dark:text-white transition-colors group-hover:text-primary">

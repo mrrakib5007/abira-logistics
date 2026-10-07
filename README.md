@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ABIRA Logistics & Transport Service Bangladesh
 
-## Getting Started
+ABIRA Logistics is a modern logistics and transportation company website built with Next.js to showcase freight forwarding, cargo movement, warehousing, customs support, and multimodal supply chain services. The platform presents a professional, reliable, and user-friendly experience for businesses seeking efficient logistics solutions across local and international trade routes.
 
-First, run the development server:
+<img src="./public/homepage.png" alt="ABIRA Logistics Preview" class="w-full" style="width: 100%; border-radius: 12px;" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project is designed to present ABIRA Logistics as a trusted logistics partner. It highlights the company’s service portfolio, operating strength, and customer-focused support through a modern responsive interface, structured service pages, and clear call-to-action sections for quote requests and support.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Logistics Services Showcase:** Air freight, ocean freight, road freight, rail freight, and hybrid freight offerings.
+* **Customs & Compliance Support:** Brokerage services and trade documentation guidance for international shipping.
+* **Warehousing Solutions:** Storage, inventory visibility, and secure logistics support.
+* **Project Cargo Handling:** Heavy and oversized cargo transportation with specialized planning.
+* **Modern Responsive Design:** Clean layout optimized for desktop, tablet, and mobile devices.
+* **Service-Focused UX:** Dedicated pages for core logistics services and business inquiries.
+* **Professional Branding:** Strong business presentation for a transport and forwarding company.
+* **Contact & Quote Experience:** Encourages customer inquiries and logistics support requests.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+* **Framework:** Next.js
+* **Styling:** Tailwind CSS
+* **Animation:** Framer Motion
+* **Icons:** React Icons
+* **Alerts:** SweetAlert2
+* **Theme Handling:** Next Themes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Github Repo:** https://github.com/mrrakib5007/abira-logistics
+* **Live Preview:** https://abira-logistics.netlify.app/
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -21,7 +21,7 @@ const iconMap = {
 };
 
 export default function ServiceDetailsClient({ service }) {
-  const IconComponent = iconMap[service.iconKey] || FaCheckCircle;
+  const IconComponent = iconMap[service.icon] || FaCheckCircle;
 
   return (
     <div className="bg-white text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
